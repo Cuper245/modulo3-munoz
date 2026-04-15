@@ -32,8 +32,8 @@ def cargar_dataset(split="train"):
 
 # ── CARGAR DATOS ─────────────────────────────────────────────
 print("Cargando datos...")
-X_train, y_train = cargar_dataset("train")
-X_test,  y_test  = cargar_dataset("test")
+X_train, y_train = cargar_dataset("/train")
+X_test,  y_test  = cargar_dataset("/test")
 
 print(f"Train: {X_train.shape}, Test: {X_test.shape}")
 

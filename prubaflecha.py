@@ -2,8 +2,8 @@
 import cv2
 from src.arrow_recognition import process_frame, match_and_annotate
 
-right_arrow = cv2.imread("data/Right_Arrow.jpg", cv2.IMREAD_GRAYSCALE)
-left_arrow = cv2.imread("data/Left_Arrow.jpg", cv2.IMREAD_GRAYSCALE)
+right_arrow = cv2.imread("modulo3-munoz/Right_Arrow.jpg", cv2.IMREAD_GRAYSCALE)
+left_arrow = cv2.imread("modulo3-munoz/Left_Arrow.jpg", cv2.IMREAD_GRAYSCALE)
 
 def main():
     cap = cv2.VideoCapture(0)
