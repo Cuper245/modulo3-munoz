@@ -1,27 +1,52 @@
-import time
-import sys
-import cv2
+import os
 import numpy as np
+from PIL import Image
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, confusion_matrix
 
-def main():
-    cv2.namedWindow("preview")
-    cap = cv2.VideoCapture(0)
+# ── PARÁMETROS ──────────────────────────────────────────────
+IMG_SIZE = (64, 64)   # todas las imágenes se redimensionan igual
+DATA_DIR = "modulo3-munoz"     # carpeta raíz
 
-    if cap.isOpened(): # try to get the first frame
-        rval, frame = cap.read()
-    else:
-        rval = False
+# ── FUNCIÓN: cargar imágenes de una carpeta ──────────────────
+def cargar_dataset(split="train"):
+    X, y = [], []
+    clases = {"izquierda": 0, "derecha": 1}
+    
+    for clase, etiqueta in clases.items():
+        carpeta = os.path.join(DATA_DIR, split, clase)
+        
+        for archivo in os.listdir(carpeta):
+            if not archivo.lower().endswith((".png", ".jpg", ".jpeg")):
+                continue
+            
+            ruta = os.path.join(carpeta, archivo)
+            img = Image.open(ruta).convert("L")      # escala de grises
+            img = img.resize(IMG_SIZE)               # mismo tamaño
+            vector = np.array(img).flatten() / 255.0 # píxeles como vector 0-1
+            
+            X.append(vector)
+            y.append(etiqueta)
+    
+    return np.array(X), np.array(y)
 
-    while rval:
-        cv2.imshow("preview", frame)
-        rval, frame = cap.read()
-        key = cv2.waitKey(20)
-        if key == 27: # exit on ESC
-            break
+# ── CARGAR DATOS ─────────────────────────────────────────────
+print("Cargando datos...")
+X_train, y_train = cargar_dataset("train")
+X_test,  y_test  = cargar_dataset("test")
 
-    cv2.destroyWindow("preview")
-    cap.release()
+print(f"Train: {X_train.shape}, Test: {X_test.shape}")
 
+# ── ENTRENAR MODELO ──────────────────────────────────────────
+modelo = LogisticRegression(max_iter=1000)
+modelo.fit(X_train, y_train)
 
-if __name__ == "__main__":
-    main()
+# ── EVALUAR ──────────────────────────────────────────────────
+y_pred = modelo.predict(X_test)
+
+print("\n── Reporte de clasificación ──")
+print(classification_report(y_test, y_pred,
+                             target_names=["izquierda", "derecha"]))
+
+print("── Matriz de confusión ──")
+print(confusion_matrix(y_test, y_pred))
