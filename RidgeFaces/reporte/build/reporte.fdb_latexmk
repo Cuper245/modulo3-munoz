@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1776467599.84292 "c:/Users/vgonz/OneDrive/Escritorio/TEC/6to Semestre/Implementacion de Robotica/modulo3-munoz/RidgeFaces/reporte/reporte.tex" "build/reporte.pdf" "reporte" 1776467603.15882 0
+["pdflatex"] 1776468558.18449 "c:/Users/vgonz/OneDrive/Escritorio/TEC/6to Semestre/Implementacion de Robotica/modulo3-munoz/RidgeFaces/reporte/reporte.tex" "build/reporte.pdf" "reporte" 1776468559.76909 0
   "C:/Users/vgonz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1776466423 256492 b5c4b6318e196c4b057e45fb9615a9ca ""
   "C:/Users/vgonz/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1757525271 13257343 13501515847b94148bd1df0dbd26849d ""
   "C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -220,17 +220,18 @@
   "C:/Users/vgonz/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/vgonz/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "antes.jpg" 1776464895 2350857 50549708536e22d02c824aab06a8f5e1 ""
-  "build/reporte.aux" 1776467602 7815 e334f9527e3fb1008efd5cd71755efb7 "pdflatex"
-  "build/reporte.out" 1776467602 6997 e94ee2edfaa17016e0d753f38dc2334c "pdflatex"
-  "build/reporte.toc" 1776467602 3405 b0502fcdba86711273d547294136b256 "pdflatex"
-  "c:/Users/vgonz/OneDrive/Escritorio/TEC/6to Semestre/Implementacion de Robotica/modulo3-munoz/RidgeFaces/reporte/reporte.tex" 1776467599 27313 d4bbe71ee914982979dfa80fd0c8d3ca ""
+  "build/reporte.aux" 1776468559 7753 cf285174eada3eadd6bff853c307c0f4 "pdflatex"
+  "build/reporte.out" 1776468559 6997 e94ee2edfaa17016e0d753f38dc2334c "pdflatex"
+  "build/reporte.toc" 1776468559 3405 b0502fcdba86711273d547294136b256 "pdflatex"
+  "c:/Users/vgonz/OneDrive/Escritorio/TEC/6to Semestre/Implementacion de Robotica/modulo3-munoz/RidgeFaces/reporte/reporte.tex" 1776468557 27628 7efba4f4116f9bd14038f2698094c7a4 ""
   "confusion_matrix.png" 1776464740 113257 284987e9b80954dc20dacdee1246500d ""
   "despues.jpg" 1776463739 1103 fa8a1efe7b00fcab3f7baaee79d01dfa ""
   "mse_vs_alpha.png" 1776464736 72357 f679602837c0052cd78c90d918d40fe9 ""
   "predicciones.png" 1776464742 88407 ef7d497a2dbe6babf9cbbf08ca942e33 ""
-  "reporte.tex" 1776467599 27313 d4bbe71ee914982979dfa80fd0c8d3ca ""
+  "reporte.tex" 1776468557 27628 7efba4f4116f9bd14038f2698094c7a4 ""
   "ridge_path.png" 1776464739 89572 7a69a7bf499a5218a09100064859a9f9 ""
   "setup.jpeg" 1776465963 214831 18378813c6aca99f98884224f875a12d ""
+  "setup1.jpeg" 1776468428 161573 4e3a835bce8d7d27acc8c3d5fb38632d ""
   (generated)
   "build/reporte.aux"
   "build/reporte.log"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.10)  17 APR 2026 17:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.10)  17 APR 2026 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1065,11 +1065,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12 <./confusion_matrix.png> <./predicciones.png>]
-<setup.jpeg, id=337, 1204.5pt x 1606.0pt>
+<setup1.jpeg, id=337, 963.6pt x 1284.8pt>
+File: setup1.jpeg Graphic file (type jpg)
+<use setup1.jpeg>
+Package pdftex.def Info: setup1.jpeg  used on input line 464.
+(pdftex.def)             Requested size: 204.85846pt x 273.12912pt.
+<setup.jpeg, id=338, 1204.5pt x 1606.0pt>
 File: setup.jpeg Graphic file (type jpg)
 <use setup.jpeg>
-Package pdftex.def Info: setup.jpeg  used on input line 463.
-(pdftex.def)             Requested size: 295.90588pt x 394.53944pt.
+Package pdftex.def Info: setup.jpeg  used on input line 469.
+(pdftex.def)             Requested size: 204.85846pt x 273.13892pt.
 
 
 
@@ -1088,7 +1093,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14 <./setup.jpeg>]
+[14 <./setup1.jpeg> <./setup.jpeg>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1098,88 +1103,88 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15]
-<antes.jpg, id=392, 3003.22pt x 3003.22pt>
+<antes.jpg, id=394, 3003.22pt x 3003.22pt>
 File: antes.jpg Graphic file (type jpg)
 <use antes.jpg>
-Package pdftex.def Info: antes.jpg  used on input line 569.
+Package pdftex.def Info: antes.jpg  used on input line 577.
 (pdftex.def)             Requested size: 136.57462pt x 136.55965pt.
-<despues.jpg, id=393, 32.12pt x 32.12pt>
+<despues.jpg, id=395, 32.12pt x 32.12pt>
 File: despues.jpg Graphic file (type jpg)
 <use despues.jpg>
-Package pdftex.def Info: despues.jpg  used on input line 574.
+Package pdftex.def Info: despues.jpg  used on input line 582.
 (pdftex.def)             Requested size: 136.57462pt x 136.61937pt.
 
-Overfull \hbox (2.47537pt too wide) in alignment at lines 587--593
+Overfull \hbox (2.47537pt too wide) in alignment at lines 595--601
  [] [] [] [] 
  []
 
 
-Overfull \hbox (2.47537pt too wide) in alignment at lines 593--597
+Overfull \hbox (2.47537pt too wide) in alignment at lines 601--605
  [] [] [] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 600--601
-[]|\T1/lmr/m/n/12 Incluido con-cep-tual-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 602--603
-[]|\T1/lmr/m/n/12 Explicación tex-tual;
- []
-
-
-Underfull \hbox (badness 6625) in paragraph at lines 604--605
-[]|\T1/lmr/m/n/12 Regla in-clui-da; fal-ta
- []
-
-
-Underfull \hbox (badness 4569) in paragraph at lines 608--609
-[]|\T1/lmr/m/n/12 Se im-ple-men-tó se-pa-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 608--609
+[]|\T1/lmr/m/n/12 Incluido con-cep-tual-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 610--611
+[]|\T1/lmr/m/n/12 Explicación tex-tual;
+ []
+
+
+Underfull \hbox (badness 6625) in paragraph at lines 612--613
+[]|\T1/lmr/m/n/12 Regla in-clui-da; fal-ta
+ []
+
+
+Underfull \hbox (badness 4569) in paragraph at lines 616--617
+[]|\T1/lmr/m/n/12 Se im-ple-men-tó se-pa-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 616--617
 \T1/lmr/m/n/12 ra-ción es-tra-ti-fi-ca-da
  []
 
 
-Underfull \hbox (badness 5533) in paragraph at lines 609--609
+Underfull \hbox (badness 5533) in paragraph at lines 617--617
 []|\T1/lmr/m/n/12 Ridge ma-nual + ba-rri-do de
  []
 
 
-Underfull \hbox (badness 4899) in paragraph at lines 614--615
+Underfull \hbox (badness 4899) in paragraph at lines 622--623
 []|\T1/lmr/m/n/12 Hay vi-sua-li-za-ción de
  []
 
 
-Underfull \hbox (badness 1527) in paragraph at lines 614--615
+Underfull \hbox (badness 1527) in paragraph at lines 622--623
 \T1/lmr/m/n/12 test, pe-ro no re-cons-
  []
 
 
-Underfull \hbox (badness 2573) in paragraph at lines 618--619
+Underfull \hbox (badness 2573) in paragraph at lines 626--627
 []|\T1/lmr/m/n/12 Depende del da-ta-set;
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 618--619
+Underfull \hbox (badness 1742) in paragraph at lines 626--627
 \T1/lmr/m/n/12 fal-ta do-cu-men-tar con
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 620--621
+Underfull \hbox (badness 1281) in paragraph at lines 628--629
 []|\T1/lmr/m/n/12 Hay re-cor-te, pe-ro no
  []
 
 
-Underfull \hbox (badness 1675) in paragraph at lines 621--622
+Underfull \hbox (badness 1675) in paragraph at lines 629--630
 \T1/lmr/m/n/12 ro fal-tan his-to-gra-mas
  []
 
 
-Overfull \hbox (2.47537pt too wide) in alignment at lines 597--624
+Overfull \hbox (2.47537pt too wide) in alignment at lines 605--632
  [] [] [] [] 
  []
 
@@ -1230,17 +1235,17 @@ Package rerunfilecheck Info: File `reporte.out' has not changed.
 (rerunfilecheck)             Checksum: E94EE2EDFAA17016E0D753F38DC2334C;6997.
  ) 
 Here is how much of TeX's memory you used:
- 37801 strings out of 468133
- 797658 string characters out of 5430712
+ 37808 strings out of 468133
+ 797783 string characters out of 5430712
  1553168 words of memory out of 5000000
- 65718 multiletter control sequences out of 15000+600000
+ 65725 multiletter control sequences out of 15000+600000
  688818 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,12n,103p,1697b,2018s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/vgonz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "c:\Users\vgonz\OneDrive\Escritorio\TEC\6to Semestre\Implementacion de Robotica\modulo3-munoz\RidgeFaces\reporte\build\reporte.pdf" (19 pages, 3257389 bytes).
+Output written on "c:\Users\vgonz\OneDrive\Escritorio\TEC\6to Semestre\Implementacion de Robotica\modulo3-munoz\RidgeFaces\reporte\build\reporte.pdf" (19 pages, 3419453 bytes).
 PDF statistics:
- 517 PDF objects out of 1000 (max. 8388607)
+ 518 PDF objects out of 1000 (max. 8388607)
  177 named destinations out of 1000 (max. 500000)
- 344 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 349 words of extra memory for PDF output out of 10000 (max. 10000000)
 

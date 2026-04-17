@@ -460,8 +460,16 @@ La Figura~\ref{fig:setup_captura} muestra ejemplos del setup utilizado durante l
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\textwidth]{setup.jpeg}
-    \caption{Protocolo de captura utilizado para la adquisición de imágenes reales.}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{setup1.jpeg}
+        \caption{Vista general del espacio de captura.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{setup.jpeg}
+        \caption{Posición relativa entre sujeto y cámara.}
+    \end{subfigure}
+    \caption{Protocolo de captura de imágenes reales.}
     \label{fig:setup_captura}
 \end{figure}
 
@@ -537,9 +545,9 @@ La Tabla~\ref{tab:descartadas} muestra un ejemplo representativo del log generad
 \toprule
 \textbf{Archivo} & \textbf{Razón} & \textbf{Fecha} \\
 \midrule
-img\_014.jpg & Rostro no detectado & 2026-04-17 \\
-img\_027.jpg & Imagen borrosa & 2026-04-17 \\
-img\_043.jpg & Encuadre incorrecto & 2026-04-17 \\
+img\_014.jpg & Descartada por gesto diferente & 2026-04-17 \\
+img\_027.jpg & Descartada por gesto diferente & 2026-04-17 \\
+img\_043.jpg & Descartada por gesto diferente & 2026-04-17 \\
 \bottomrule
 \end{tabular}
 \end{table}
