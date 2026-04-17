@@ -3,11 +3,23 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.model_selection import train_test_split
 
 np.random.seed(42)
 
+IMG_SIZE = 32
+
 # ==============================
-# 1. FUNCIÓN PARA CARGAR DATASET
+# 1. PREPROCESAMIENTO
+# ==============================
+def preprocess(img):
+    img = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
+    img = cv2.GaussianBlur(img, (3,3), 0)
+    img = cv2.equalizeHist(img)
+    return img
+
+# ==============================
+# 2. CARGAR DATASET COMPLETO
 # ==============================
 def cargar_dataset(path):
     X, y = [], []
@@ -25,19 +37,28 @@ def cargar_dataset(path):
             if img is None:
                 continue
 
-            X.append(img.flatten())  # 32x32 → 1024
+            img = preprocess(img)
+
+            X.append(img.flatten())
             y.append(label)
 
     return np.array(X), np.array(y)
 
 # ==============================
-# 2. CARGAR TRAIN Y TEST
+# 3. CARGAR TODO Y HACER SPLIT
 # ==============================
-TRAIN_DIR = "dataset/train"
-TEST_DIR  = "dataset/test"
+DATASET_DIR = "dataset"
 
-X_train, y_train = cargar_dataset(TRAIN_DIR)
-X_test, y_test   = cargar_dataset(TEST_DIR)
+X, y = cargar_dataset(DATASET_DIR)
+
+print("Dataset completo:", X.shape, y.shape)
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y,
+    test_size=0.3,
+    stratify=y,
+    random_state=42
+)
 
 print("Train:", X_train.shape, y_train.shape)
 print("Test:", X_test.shape, y_test.shape)
@@ -45,7 +66,7 @@ print("Test:", X_test.shape, y_test.shape)
 n_classes = len(np.unique(y_train))
 
 # ==============================
-# 3. NORMALIZACIÓN
+# 4. NORMALIZACIÓN
 # ==============================
 mu = X_train.mean(axis=0)
 sigma = X_train.std(axis=0) + 1e-8
@@ -53,8 +74,24 @@ sigma = X_train.std(axis=0) + 1e-8
 X_train = (X_train - mu) / sigma
 X_test  = (X_test - mu) / sigma
 
+# guardar imágenes para visualización
+X_test_images = X_test.copy()
+
 # ==============================
-# 4. SÍMPLEX REGULAR
+# 5. PCA
+# ==============================
+k = min(120, X_train.shape[0] - 1)
+
+U, S, Vt = np.linalg.svd(X_train, full_matrices=False)
+W = Vt[:k]
+
+X_train = X_train @ W.T
+X_test  = X_test @ W.T
+
+print("Dimensión después de PCA:", X_train.shape)
+
+# ==============================
+# 6. SÍMPLEX REGULAR
 # ==============================
 def simplex_regular(m):
     T = np.zeros((m, m - 1))
@@ -71,24 +108,24 @@ T = simplex_regular(n_classes)
 Y_train = T[y_train]
 
 # ==============================
-# 5. RIDGE MANUAL
+# 7. RIDGE
 # ==============================
 def ridge_regression(X, Y, alpha):
     I = np.eye(X.shape[1])
     return np.linalg.solve(X.T @ X + alpha * I, X.T @ Y)
 
 # ==============================
-# 6. BÚSQUEDA DE ALPHA
+# 8. BÚSQUEDA DE ALPHA
 # ==============================
-alphas = np.logspace(-3, 3, 50)
+alphas = np.logspace(-2, 4, 50)
 mse_list = []
 betas = []
 
 for a in alphas:
     beta = ridge_regression(X_train, Y_train, a)
-    Y_pred = X_test @ beta
+    Y_pred_tmp = X_test @ beta
 
-    mse = np.mean((Y_pred - T[y_test])**2)
+    mse = np.mean((Y_pred_tmp - T[y_test])**2)
     mse_list.append(mse)
     betas.append(beta)
 
@@ -96,7 +133,7 @@ best_alpha = alphas[np.argmin(mse_list)]
 print("Mejor alpha:", best_alpha)
 
 # ==============================
-# 7. CLASIFICACIÓN
+# 9. CLASIFICACIÓN
 # ==============================
 def predict_class(Y_pred, T):
     dists = np.linalg.norm(Y_pred[:, None] - T[None, :], axis=2)
@@ -110,7 +147,7 @@ acc = accuracy_score(y_test, y_pred)
 print("Accuracy:", acc)
 
 # ==============================
-# 8. MSE vs ALPHA
+# 10. MSE vs ALPHA
 # ==============================
 plt.figure()
 plt.semilogx(alphas, mse_list)
@@ -122,7 +159,7 @@ plt.grid()
 plt.show()
 
 # ==============================
-# 9. RIDGE PATH
+# 11. RIDGE PATH
 # ==============================
 plt.figure()
 for i in range(min(10, betas[0].shape[0])):
@@ -137,14 +174,14 @@ plt.grid()
 plt.show()
 
 # ==============================
-# 10. MATRIZ DE CONFUSIÓN
+# 12. MATRIZ DE CONFUSIÓN
 # ==============================
 cm = confusion_matrix(y_test, y_pred)
 cm_norm = cm / cm.sum(axis=1, keepdims=True)
 
 plt.figure(figsize=(6,5))
 plt.imshow(cm_norm, cmap="Blues")
-plt.title("Matriz de Confusión (%)")
+plt.title(f"Matriz de Confusión (acc={acc:.2f})")
 plt.xlabel("Predicho")
 plt.ylabel("Real")
 
@@ -156,14 +193,14 @@ plt.colorbar()
 plt.show()
 
 # ==============================
-# 11. VISUALIZACIÓN RESULTADOS
+# 13. VISUALIZACIÓN
 # ==============================
-idxs = np.random.choice(len(X_test), 12, replace=False)
+idxs = np.random.choice(len(X_test_images), 12, replace=False)
 
 fig, axes = plt.subplots(2,6, figsize=(12,5))
 
 for ax, idx in zip(axes.flat, idxs):
-    img = X_test[idx].reshape(32,32)
+    img = X_test_images[idx].reshape(IMG_SIZE, IMG_SIZE)
     real = y_test[idx]
     pred = y_pred[idx]
 
