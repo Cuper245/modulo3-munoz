@@ -55,7 +55,7 @@ print("Dataset completo:", X.shape, y.shape)
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y,
-    test_size=0.3,
+    test_size=0.2,
     stratify=y,
     random_state=42
 )
@@ -156,7 +156,9 @@ plt.title("MSE vs Alpha")
 plt.xlabel("alpha")
 plt.ylabel("MSE")
 plt.grid()
+plt.savefig("mse_vs_alpha.png", dpi=300, bbox_inches="tight")
 plt.show()
+
 
 # ==============================
 # 11. RIDGE PATH
@@ -171,7 +173,9 @@ plt.title("Ridge Path")
 plt.xlabel("alpha")
 plt.ylabel("Coeficientes")
 plt.grid()
+plt.savefig("ridge_path.png", dpi=300, bbox_inches="tight")
 plt.show()
+
 
 # ==============================
 # 12. MATRIZ DE CONFUSIÓN
@@ -190,7 +194,9 @@ for i in range(cm.shape[0]):
         plt.text(j, i, f"{cm_norm[i,j]:.2f}", ha="center")
 
 plt.colorbar()
+plt.savefig("confusion_matrix.png", dpi=300, bbox_inches="tight")
 plt.show()
+
 
 # ==============================
 # 13. VISUALIZACIÓN
@@ -211,4 +217,5 @@ for ax, idx in zip(axes.flat, idxs):
     ax.axis("off")
 
 plt.suptitle("Predicciones (verde=correcto, rojo=error)")
+plt.savefig("predicciones.png", dpi=300, bbox_inches="tight")
 plt.show()
